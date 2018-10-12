@@ -1,0 +1,22 @@
+<?php
+return array (
+  'DB_TYPE' => 'mysql',
+  'DB_HOST' => 'localhost',
+  'DB_NAME' => 'bug',
+  'DB_USER' => 'root',
+  'DB_PWD' => '123456',
+  'DB_PORT' => 3306,
+  'DB_PREFIX' => 'sp_',
+  'DB_CHARSET' => 'utf8',
+  'DOMAIN' => 'http://www.test.com',
+  'TITLE' => '大白网络',
+  'KEYWORDS' => '暂无',
+  'DESCRIPTION' => '暂无',
+  'EMAIL' => '暂定无',
+  'CONTACT' => '暂无',
+  'FAX' => '暂无',
+  'PHONE' => '暂无',
+  'ICP' => '暂无',
+  'COPY' => '暂无',
+  'ADDRESS' => '暂无',
+); ?>

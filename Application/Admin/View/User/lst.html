@@ -1,0 +1,85 @@
+ 
+  <div class="content-wrapper">
+     <section class="content">
+          <div class="col-md-12">
+          	<div class="card">
+          		 
+	              <div class="card-header">
+	                <span class="card-title">会员管理</span>
+                        <button type="button" class="btn btn-primary btn-sm" style="float: right;"> 
+	                 	<a href="__CONTROLLER__/add" style="text-decoration:  none;color: white;display: block;cursor: pointer;">
+	                 		添加</a>
+	                 </button>
+	              </div>
+                
+<!-- form start -->
+	              <form role="form">
+		              <table class="table table-bordered">
+	                       
+											<thead>
+												<tr>
+													<th><font color="black">ID</font></th>
+													
+														<th><font color="black">登录名</font></th>
+                                                                                                                <th><font color="black">登录角色</font></th>
+													        <th><font color="black">状态</font></th>
+														
+													       <th><font color="black">操作</font></th>
+												</tr>
+											</thead>
+											<tbody>
+												<volist name="info" id="vo">
+													<tr>
+														<td>{$vo.id}</td>
+														<td>{$vo.username}</td>
+                                                                                                                <td>{$vo.rolename}</td>
+                                                                                                        <if condition="$vo['status'] eq 1"><td>正常</td></if>
+                                                                                        
+					                            <td><button class="btn btn-success"><i class="fa fa-edit"></i><a href="__CONTROLLER__/edit/id/{$vo.id}"style="color: white;text-decoration: none;">&nbsp;编辑</a></button>
+					                    <if condition="$vo['id'] neq 1">
+					                                <button class="btn btn-danger"><i class="fa fa-table"></i><a onclick="return confirm('确定删除吗?');" href="__CONTROLLER__/del/id/{$vo.id}"style="color: white;text-decoration: none;">&nbsp;删除</a></button
+					                    </if>
+													</td>
+													</tr>
+				                </volist>
+											</tbody>
+				                                                        
+						      </table>
+		            </form
+                <div class="list-page"><div style="margin: auto;">{$page}</div></div>
+            </div>
+        </div>
+     </section>
+   
+  </div> 
+<!-- ./wrapper -->
+
+<script type="text/javascript" src="js/jquery-3.3.1.js" ></script>
+<!-- Bootstrap 4 -->
+<script src="js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="js/adminlte.min.js"></script>
+
+<!-- Bootstrap WYSIHTML5 -->
+<script src="js/bootstrap3-wysihtml5.all.min.js"></script>
+<script>
+			function btnck() {
+				var a = document.getElementById("InputAppId");
+				var b = document.getElementById("InputPassword1");
+				
+				if(a.value == "") {
+					alert("文本框内容不能为空！");
+				} 
+				else {
+					//					
+					if(b.value == "") {
+						alert("文本框内容不能为空！");
+					} 
+					else {
+									alert("提交成功！");
+								}
+					}
+			}
+		</script>
+</body>
+</html>

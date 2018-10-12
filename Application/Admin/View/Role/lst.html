@@ -1,0 +1,104 @@
+  
+<div class="content-wrapper">
+    <section class="content">
+        <div class="col-md-12">
+            <div class="card">
+
+                <div class="card-header">
+                    <span class="card-title">角色列表</span>
+                    <button type="button" class="btn btn-primary btn-sm" style="float: right;"> 
+                        <a href="__CONTROLLER__/add.html" style="text-decoration:  none;color: white;display: block;cursor: pointer;">
+                            <b>添加新角色</b></a>
+                    </button>
+                </div>
+
+                <!-- form start -->
+                <form role="form">
+                    <table class="table table-bordered">
+
+                        <thead>
+                            <tr>
+                                <th style="text-align: center;"><font color="black">ID</font></th>
+
+
+                                <th style="text-align: center;"><font color="black">角色名称</font></th>
+                                <th style="text-align: center;"><font color="black">角色权限</font></th>
+
+                                <th style="text-align: center;"><font color="black">操作</font></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <volist name="list" id="vo">
+                            <tr>
+                               
+                            <td>{$vo.id}</td>
+                            <td>{$vo.rolename}</td>
+                            <td>
+                            <if condition="$vo['pri_id_list'] eq '*'">所有权限
+                            <else />
+                            {$vo.pri_name}
+                            </if>
+                            </td>
+                            
+
+                            <td style="text-align: center;"><button class="btn btn-success"><i class="fa fa-edit"></i><a href="__CONTROLLER__/edit/id/{$vo.id}" style="color:white;">&nbsp;&nbsp;编辑</a></button>
+
+                                <button class="btn btn-danger"><i class="fa fa-table"></i><a onclick="return confirm('确定删除吗?');" href="__CONTROLLER__/del/id/{$vo.id}" style="color:white;">&nbsp;&nbsp;删除</a></button>
+
+                            </td>
+                            </tr>
+                        </volist>
+
+
+                        </tbody>
+
+                    </table>
+
+
+                </form
+                <div class="list-page"><div>{$page}</div></div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+
+
+
+<aside class="control-sidebar control-sidebar-dark">
+
+</aside>
+
+</div>
+<!-- ./wrapper -->
+
+<script type="text/javascript" src="js/jquery-3.3.1.js" ></script>
+<!-- Bootstrap 4 -->
+<script src="js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="js/adminlte.min.js"></script>
+
+<!-- Bootstrap WYSIHTML5 -->
+<script src="js/bootstrap3-wysihtml5.all.min.js"></script>
+<script>
+                                                                                function btnck() {
+                                                                                    var a = document.getElementById("InputAppId");
+                                                                                    var b = document.getElementById("InputPassword1");
+
+                                                                                    if (a.value == "") {
+                                                                                        alert("文本框内容不能为空！");
+                                                                                    }
+                                                                                    else {
+                                                                                        //					
+                                                                                        if (b.value == "") {
+                                                                                            alert("文本框内容不能为空！");
+                                                                                        }
+                                                                                        else {
+                                                                                            alert("提交成功！");
+                                                                                        }
+                                                                                    }
+                                                                                }
+</script>
+</body>
+</html>

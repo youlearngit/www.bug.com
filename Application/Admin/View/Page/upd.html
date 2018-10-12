@@ -1,0 +1,79 @@
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <section class="content">
+    	
+<!--form start-->    	
+    	<form action="__SELF__" method="post" id="myform" name="myform" enctype="multipart/form-data">
+            <input type="hidden" name="id" value="{$info.id}" />
+		      <div class="col-md-12">
+		         <div class="form-group">
+		
+				<span style="color: #17a2b8"><b>文章标题</b></span>
+					<div class="input-group">
+                                           <input name="title" value="{$info.title}" type="text" class="form-control" id="fxzbt" placeholder="主标题">
+					</div>
+		
+			</div>
+		
+                          
+		         
+		         <div class="form-group">
+		
+				<span style="color: #17a2b8"><b>编辑内容</b></span>
+				<div class="input-group">
+				   
+                                    <textarea id="goods_desc" name="content" >{$info.content}</textarea>
+				</div>
+		          </div>
+                          <div style="margin-bottom: 20px;margin-left: 10px;">
+			                      <button type="submit" class="btn btn-primary">更新</button>
+			                  </div>
+		      </div>
+		  </form>
+    </section>
+    
+  </div>
+  <!-- /.content-wrapper -->
+  
+
+  <!-- Control Sidebar -->
+ 
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+
+<script>
+  $(function () {
+    // Replace the <textarea id="editor1"> with a CKEditor
+    // instance, using default configuration.
+    ClassicEditor
+      .create(document.querySelector('#editor1'))
+      .then(function (editor) {
+        // The editor instance
+      })
+      .catch(function (error) {
+        console.error(error)
+      })
+
+    // bootstrap WYSIHTML5 - text editor
+
+    $('.textarea').wysihtml5({
+      toolbar: { fa: true }
+    })
+  })
+</script>
+<!--导入在线编辑器 -->
+<link href="__PUBLIC__/umeditor1_2_2-utf8-php/themes/default/css/umeditor.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="__PUBLIC__/umeditor1_2_2-utf8-php/third-party/jquery.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/umeditor1_2_2-utf8-php/umeditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/umeditor1_2_2-utf8-php/umeditor.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/umeditor1_2_2-utf8-php/lang/zh-cn/zh-cn.js"></script>
+<script>
+UM.getEditor('goods_desc', {
+	initialFrameWidth : "100%",
+	initialFrameHeight : 350
+});
+</script>

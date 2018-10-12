@@ -1,0 +1,57 @@
+<div class="content-wrapper">
+     <section class="content">
+          <div class="col-md-12">
+          	<div class="card card-primary">
+	              <div class="card-header">
+	                <h3 class="card-title">新增角色</h3>
+	              </div>
+              
+<!-- form start -->
+	              <form action="__SELF__" method="post" id="myform" name="myform" enctype="multipart/form-data">
+                          <input type='hidden' name='id' value='{$roleres.id}'/>
+		                <div class="card-body">
+		                	
+			                  <div class="form-group" >
+			                    
+			                     <span style="color: #0e7fe1;"><b>角色名称</b></span>
+                                             
+			                 	<input name="rolename" type="text" class="form-control" id="name" value="{$roleres.rolename}" placeholder="请输入名称">
+                                             
+			                  </div>
+			                  
+			                  	
+			                  <div class="form-group">
+			                  	<span style="color: #0e7fe1;"><b>角色的权限</b></span>
+                                                <?php foreach($pris as $k=>$v):
+                                         //,3,2,4,53,               //,3,
+                                             if(strpos(','.$roleres['pri_id_list'].',',','.$v['id'].',')!==false){
+                                              $check="checked='checked'";
+                                                    }else{
+                                                  $check='';
+                                                   }
+                                                   ?>
+                                            <li level="<?php echo $v['level'];?>">
+                                   <input <?php echo $check;?> class="common-text" name="pri_id_list[]" size="50" value="<?php echo $v['id'];?>" type="checkbox">
+                                  <if condition="$vo['parentid'] neq 0">|</if>
+                                  <?php $v['parentid'] ? '|':'';?>
+                                  <?php echo str_repeat('-', $v['level']*8);?>
+                                  <?php echo $v['pri_name'];?>
+                                   </li>
+                                   <?php endforeach;?>
+			                  </div>
+			                 
+			                  
+			                  <div style="margin-bottom: 20px;margin-left: 20px;float: left;">
+							<button type="submit" id="comment_btn" class="btn btn-primary">提交</button>
+							<button type="submit" class="btn btn-primary" onclick="">返回</button>
+						</div>
+
+		                </div>
+	              </form>
+            </div>
+        </div>
+     </section>
+   
+  </div>
+ 
+  

@@ -1,0 +1,59 @@
+
+  <div class="content-wrapper">
+     <section class="content">
+          <div class="col-md-12">
+          	<div class="card card-primary">
+	              <div class="card-header">
+	                <h3 class="card-title">微信设置</h3>
+	              </div>
+              
+<!-- form start -->
+	              <form action="__SELF__" method="post" id="myform" name="myform" enctype="multipart/form-data">
+                      <input type="hidden" name="id" value="1"/>
+		                <div class="card-body">
+		                	
+			                  <div class="form-group" >
+			                    
+			                     <span style="color: #0e7fe1;"><b>APPID</b></span>
+			                    <input type="text" class="form-control"  required="required" id="InputAppId" placeholder="请输入APPID" name="appid" value="{$info.appid}">
+			                  </div>
+			                  
+			                  	
+			                  <div class="form-group">
+			                  	<span style="color: #0e7fe1;"><b>AppSecret</b></span>
+			                    
+			                    <input type="text" class="form-control" required="required" id="InputPassword1" placeholder="请输入AppSecret" name="appsecret" value="{$info.appsecret}">
+			                  </div>
+			                  
+			                  
+			                  <div class="form-group">
+			                  		<span style="color: #0e7fe1;"><b>文件上传</b></span>
+			                  
+			                    <label for="exampleInputFile"></label>
+			                    <div class="input-group">
+			                      <div class="custom-file">
+			                        <input type="file" class="custom-file-input" id="exampleInputFile" name="file_upload" >
+			                        <label class="custom-file-label" for="exampleInputFile">选择文件</label>
+			                      </div>
+			                      
+			                    </div>
+			                  </div>
+			                 
+			                  
+			                  <div class="card-footer">
+			                      <button type="submit" class="btn btn-primary">更新</button>
+			                  </div>
+			                  
+		                </div>
+	              </form>
+            </div>
+        </div>
+     </section>
+   
+  </div>
+ 
+ 
+
+<!-- ./wrapper -->
+
+
