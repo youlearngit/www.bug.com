@@ -4,6 +4,7 @@
 	<section class="content">
 
 		<div class="col-md-12">
+
 			<!--form start-->
 			<form action="__SELF__" method="post" id="myform" name="myform" enctype="multipart/form-data">
 				<div class="card card-info">
@@ -16,10 +17,8 @@
 
 							<span style="color: #17a2b8"><b>分享标题</b></span>
 							<div class="input-group">
-								<input name="share_title" value="{$info.share_title}" type="text" class="form-control" id="fxzbt" placeholder="请输入微信分享主标题">
+								<input name="share_title" value="{$wxshare.share_title}" type="text" class="form-control" id="fxzbt" placeholder="请输入微信分享主标题">
 							</div>
-							<span> <font color="red">*此处必填*</font></span>
-							<p id="yi" style="color: red;"></p>
 
 						</div>
 
@@ -27,10 +26,8 @@
 
 							<span style="color: #17a2b8"><b>分享链接</b></span>
 							<div class="input-group">
-								<input name="share_link" value="{$info.share_link}" type="text" class="form-control" id="fxlj" placeholder="请输入微信分享链接">
+								<input name="share_link" value="{$wxshare.share_link}" type="text" class="form-control" id="fxlj" placeholder="请输入微信分享链接">
 							</div>
-							<span> <font color="red">*此处必填*</font></span>
-							<p id="er" style="color: red;"></p>
 
 						</div>
 
@@ -38,214 +35,113 @@
 
 							<span style="color: #17a2b8"><b>分享简介</b></span>
 							<div class="input-group">
-								<input name="share_desc" value="{$info.share_desc}" type="text" class="form-control" id="fxjj" placeholder="请输入微信分享简介">
+								<input name="share_desc" value="{$wxshare.share_desc}" type="text" class="form-control" id="fxjj" placeholder="请输入微信分享简介">
 							</div>
-							<p id="san" style="color: red;"></p>
+
 						</div>
 
 						<div class="form-group">
 							<span style="color: #17a2b8"><b>分享图片链接</b></span>
 
 							<div class="input-group">
-								<input name="share_image" value="{$info.share_image}" type="text" class="form-control" id="fxtp" placeholder="请输入微信分享图片">
+								<input name="share_image" value="{$wxshare.share_image}" type="text" class="form-control" id="fxtp" placeholder="请输入微信分享图片">
 							</div>
-							<p id="si" style="color: red;"></p>
+
 						</div>
-						<!--<div class="col-md-12">-->
-						<div class="form-group">
+						<div class="col-md-12">
+							<div class="form-group">
 
-							<span style="color: #f63131"><b>CNZZ统计代码</b></span>
-							<div class="input-group">
-								<input name="cnzz" value="{$info.cnzz}" type="text" class="form-control" id="fxzbt1" placeholder="请输入CNZZ统计代码">
-							</div>
-							<p id="wu" style="color: red;"></p>
-						</div>
-
-						<div class="form-group">
-							<span style="color:#f63131"><b>小说原文链接</b></span>
-							<div class="input-group">
-								<input name="xs_link" value="{$info.xs_link}" type="text" class="form-control" id="xslj" placeholder="请输入微信分享简介">
-							</div>
-							<p id="liu" style="color: red;"></p>
-						</div>
-
-					</div>
-				</div>
-
-				<span style="font-size:1.1em; color: #17a2b8; font-weight: 550; font-family: '黑体';margin-left: 1.2em;float: left;">是否编辑内容:</span>
-				<select onChange="selectV()" id="select1" class="card card-primary" style="margin-bottom: 1.5em; color: #6C757D;">
-					<option value="0">是</option>
-					<option value="1">否</option>
-				</select>
-				<!--</div>-->
-				<div class="card card-primary" id="con" style="display:block;">
-					<div class="card-header">
-						<h3 class="card-title">文案编辑</h3>
-					</div>
-
-					<div class="card card-body">
-
-						<div class="form-group">
-
-							<span style="color: #0e7fe1;"><b>编辑标题</b></span>
-
-							<div class="filter-box">
-								<div class="filter-text">
-									<!--class="filter-title"-->
-									<input type="text" readonly placeholder="pleace select" class="filter-title" id="fxzbt" />
-									<i class="icon icon-filter-arrow"></i>
+								<span style="color: #f63131"><b>CNZZ统计代码</b></span>
+								<div class="input-group">
+									<input name="cnzz" value="" type="text" class="form-control" id="fxzbt" placeholder="">
 								</div>
-								<select name="title">
-                                                                 <option>---请选择标题---</option>
-                                                                   <volist name="info" id="vo">
-                                                                       <option value="{$vo.id}" <if condition="$vo['id'] eq 1">selected="selected"</if>>{$vo.title}</option>
-                                                                   </volist>
 
-								</select>
 							</div>
-
-							<br>
-							<br>
-							<p style="color: #0e7fe1;margin-top: 2em;"><b>编辑内容</b></p>
-
-							<div class="input-group">
-								<textarea style="width: 100%;overflow: scroll;" id="goods_desc" name="content">{$data.content}</textarea>
+							<div class="form-group">
+								<span style="color:#f63131"><b>小说原文链接</b></span>
+								<div class="input-group">
+									<input name="xs_link" value="{$wxshare.xs_link}" type="text" class="form-control" id="xslj" placeholder="请输入微信分享简介">
+								</div>
 							</div>
-
 						</div>
+						<div class="card-header">
+						</div>
+						<div class="col-md-12">
+							<div class="form-group">
 
+								<span style="color: #17a2b8"><b>文章标题</b></span>
+								<div class="input-group">
+									<input name="title" value="{$info.title}" type="text" class="form-control" id="fxzbt" placeholder="请输入文章标题">
+								</div>
+
+							</div>
+
+							<div class="card card-outline card-primary">
+								<div class="card-header">
+									<span style="color: #17a2b8"><b>插入图片</b></span>
+									<!-- tools box -->
+									<div class="card-tools">
+										<button type="button" class="btn btn-tool btn-sm" data-widget="collapse" data-toggle="tooltip" title="Collapse">
+		                  					<i class="fa fa-minus"></i></button>
+										<button type="button" class="btn btn-tool btn-sm" data-widget="remove" data-toggle="tooltip" title="Remove">
+		                  					<i class="fa fa-times"></i></button>
+									</div>
+
+								</div>
+							</div>
+							<div class="form-group">
+
+								<span style="color: #17a2b8"><b>编辑内容</b></span>
+								<div class="input-group">
+
+									<textarea id="goods_desc" name="content">{$info.content}</textarea>
+								</div>
+							</div>
+						</div>
+						<!--<div class="form-group">
+
+							<span style="color: #17a2b8"><b>页面文件名(*.html)</b></span>
+							<div class="input-group">
+								<input name="share_name" value="{$info.share_name}" type="text" class="form-control" id="fxjj" placeholder="请输入名称">
+							</div>
+
+						</div>-->
+
+						<div class="card-footer">
+							<button type="submit" class="btn btn-primary">下一步</button>
+						</div>
 					</div>
-				</div>
 
-				<div style="margin-bottom: 20px;margin-left: 10px;">
-					<!--class="card-footer"-->
-					<button type="submit" class="btn btn-primary" onclick="return btnck()">下一步</button>
 				</div>
-		    </form>
+			</form>
+		</div>
+		<!-- /.col-->
 
-        </div>
-    </section>
+		<!-- ./row -->
+	</section>
 
 </div>
 
+<aside class="control-sidebar control-sidebar-dark">
 
+</aside>
+
+</div>
 <!-- ./wrapper -->
-<script>
-	$(function() {
-		// Replace the <textarea id="editor1"> with a CKEditor
-		// instance, using default configuration.
-		ClassicEditor
-			.create(document.querySelector('#editor1'))
-			.then(function(editor) {
-				// The editor instance
-			})
-			.catch(function(error) {
-				console.error(error)
-			})
 
-		// bootstrap WYSIHTML5 - text editor
-
-		$('.textarea').wysihtml5({
-			toolbar: {
-				fa: true
-			}
-		})
-	})
-
-	function selectV() {
-
-		var b = document.getElementById("select1");
-		if(b.value == "1") {
-			document.getElementById("con").style.display = "none";
-
-		} else {
-			document.getElementById("con").style.display = "block";
-
-		}
-	}
-
-	function btnck() {
-		var a = document.getElementById("fxzbt");
-		var b = document.getElementById("fxlj");
-		var c = document.getElementById("fxjj");
-		var d = document.getElementById("fxtp");
-		var e = document.getElementById("fxzbt");
-		var f = document.getElementById("xslj");
-		if(a.value == "") {
-			document.getElementById("yi").innerHTML = "文本框内容不能为空！";
-			return false;
-		}
-		if(b.value == "") {
-			document.getElementById("er").innerHTML = "文本框内容不能为空！";
-			return false;
-		}
-		if(c.value == "") {
-			document.getElementById("san").innerHTML = "文本框内容不能为空！";
-			return false;
-		}
-		if(d.value == "") {
-			document.getElementById("si").innerHTML = "文本框内容不能为空！";
-			return false;
-		}
-		if(e.value == "") {
-			document.getElementById("wu").innerHTML = "文本框内容不能为空！";
-			return false;
-		}
-		if(f.value == "") {
-			document.getElementById("liu").innerHTML = "文本框内容不能为空！";
-			return false;
-		} else {
-
-			return true;
-		}
-
-	}
-</script>
-
-<script>
-	$(function() {
-		// Replace the <textarea id="editor1"> with a CKEditor
-		// instance, using default configuration.
-		ClassicEditor
-			.create(document.querySelector('#editor1'))
-			.then(function(editor) {
-				// The editor instance
-			})
-			.catch(function(error) {
-				console.error(error)
-			})
-
-		// bootstrap WYSIHTML5 - text editor
-
-		$('.textarea').wysihtml5({
-			toolbar: {
-				fa: true
-			}
-		})
-	})
-</script>
 <!--导入在线编辑器 -->
-<link href="__PUBLIC__/umeditor1_2_2-utf8-php/themes/default/css/umeditor.css" type="text/css" rel="stylesheet">
-<!--<script type="text/javascript" src="__PUBLIC__/umeditor1_2_2-utf8-php/third-party/jquery.min.js"></script>-->
-<!--<script type="text/javascript" src="../../../../Public/Admin/js/jquery.min.js" ></script>-->
-<script type="text/javascript" charset="utf-8" src="__PUBLIC__/umeditor1_2_2-utf8-php/umeditor.config.js"></script>
-<script type="text/javascript" charset="utf-8" src="__PUBLIC__/umeditor1_2_2-utf8-php/umeditor.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/umeditor1_2_2-utf8-php/lang/zh-cn/zh-cn.js"></script>
-<script>
-	UM.getEditor('goods_desc', {
-		initialFrameWidth: "100%",
-		initialFrameHeight: 450
-	});
-</script>
-
+<link href="__PUBLIC__/ueditor/themes/default/css/ueditor.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="__PUBLIC__/ueditor/third-party/jquery.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/ueditor/ueditor.config.js"></script>
+		<script type="text/javascript" charset="utf-8" src="__PUBLIC__/ueditor/ueditor.all.min.js">
+		</script>
+		<!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
+		<!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
+		<script type="text/javascript" charset="utf-8" src="__PUBLIC__/ueditor/lang/zh-cn/zh-cn.js"></script>
 <script type="text/javascript">
-	//本小插件支持移动端哦
+	//实例化编辑器
 
-	//这里是初始化
-	$('.filter-box').selectFilter({
-		callBack: function(val) {
-			//返回选择的值
-			console.log(val + '-是返回的值')
-		}
-	});
+	UE.getEditor('goods_desc',{initialFrameWidth:1780,initialFrameHeight:400,
+        wordCount:true, //开启字数统计 elementPathEnabled : false,//是否启用元素路径，默认是显示
+maximumWords:50000,});
 </script>
